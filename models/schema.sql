@@ -1,11 +1,12 @@
-drop database if exists projectDB;
-CREATE DATABASE projectDB;
+DROP DATABASE IF EXISTS projectdb;
+CREATE DATABASE projectdb;
 
-use projectDB;
-create table user(
-    id int auto_increment,
-    name varchar(50) not null,
-    age int not null,
-    gender varchar(50) not null,
-    primary key (id)
-);
+CREATE TABLE users (
+    id INT AUTO INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    gender CHAR(1) NOT NULL,
+    age INT NOT NULL, 
+)
+
+
+
