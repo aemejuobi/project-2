@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.sideMenuClose {
+  width: 0;
+  opacity: 0;
+}
+
+.sideMenuOpen {
+  width: 33.333;
+  opacity: 1;
+}
+
+h2 {
+  text-align: center;
+}
+
+nav {
+  background-color: black;
+}
+
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("indexpic.jpg");
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "PT Sans", sans-serif;
+}
+
+/* Change color of links on hover */
+a:hover {
+    color: white;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
