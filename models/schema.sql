@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS projectdb;
 CREATE DATABASE projectdb;
 
@@ -9,4 +10,10 @@ CREATE TABLE users (
 )
 
 
+
+=======
+drop database if exists projectDB;
+CREATE DATABASE projectDB;
+
+use projectDB;
 
