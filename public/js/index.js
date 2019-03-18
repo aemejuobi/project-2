@@ -41,7 +41,7 @@ var API = {
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/user/" + id,
       type: "DELETE"
     });
   }
