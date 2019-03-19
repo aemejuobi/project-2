@@ -1,31 +1,34 @@
+var path = require('path');
+
 var db = require("../models");
 
 module.exports = function(app) {
   // Load home page page
   app.get("/", function(req, res) {
-
-    db.User.findAll({}).then(function(results) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: results
-      });
-      console.log(db.User);
-    });
+    res.sendFile(path.join(__dirname, '..', 'public', "index.html"));
+    // db.User.findAll({}).then(function(results) {
+    //   res.render("index");
+    //   console.log(db.User);
+    // });
   });
 
 
   // Load clicked sport page that displays the teams for that sport
-  app.get("/sport/:sport", function(req, res) {
+  app.get("/:sport", function(req, res) {
     db.Team.findOne({
       where: {
         sportName: req.params.sport,
       }
     }).then(function(results) {
-      res.render("example", {
-        example: results
-      });
+      res.sendFile(path.join(__dirname, '..', 'public', "login.html"));
     });
     console.log(db.Team);
+  });
+
+  
+// Load login page
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, '..', 'public', "login.html"));
   });
 
 //   app.get("/team/:id", function(req, res) {

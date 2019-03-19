@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
-var exphbs = require("express-handlebars");
-var path = require("path");
+// var exphbs = require("express-handlebars");
+// var path = require("path");
 var apiRoutes = require("./routes/apiRoutes");
 var htmlRoutes = require("./routes/htmlRoutes");
 
@@ -13,19 +13,16 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(express.static("public"));
-app.use(express.static(path.join(__dirname, "public")));
-// app.use(express.static(path.join(__dirname, "public/styles")));
-// app.use(express.static(path.join(__dirname, "public/js")));
+app.use(express.static("public"));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
 
 // Routes
 apiRoutes(app);
