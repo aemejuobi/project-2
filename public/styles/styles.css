@@ -1,3 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.sideMenuClose {
+  width: 0;
+  opacity: 0;
+}
+
+.sideMenuOpen {
+  width: 33.333;
+  opacity: 1;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  color: antiquewhite;
+}
+
+nav {
+  background-color: black;
+}
+
+.infoWindow {
+  float: right;
+  margin-top: 45%;
+  width: 75%;
+}
+
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("indexpic.jpg");
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "PT Sans", sans-serif;
+}
+
+/* Change color of links on hover */
+a:hover {
+    color: white;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Login Animation */
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("indexpic.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.loginPage {
+  width: 360px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  margin-top: 125px;
+  padding: 45px;
+  text-align: center;
+}
+.form input {
+  outline: 1;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: green;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+.form button:hover,.form button:active {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: white;
+}
+.form .message a {
+  color: aquamarine;
+  text-decoration: none;
+}
+.form .registerForm {
+  display: none;
 }
