@@ -6,10 +6,6 @@ module.exports = function(app) {
   // Load home page page
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, '..', 'public', "index.html"));
-    // db.User.findAll({}).then(function(results) {
-    //   res.render("index");
-    //   console.log(db.User);
-    // });
   });
 
 
