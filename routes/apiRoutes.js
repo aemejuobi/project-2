@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
+
   // Get all teams (Read)
   app.get("/api/allTeams", function(req, res) {
     db.Team.findAll({}).then(function(results) {
@@ -19,8 +20,8 @@ module.exports = function(app) {
   app.post("/api/newUser", function(req, res){
     db.User.create({
       name: req.body.name,
-      age: req.body.age,
-      gender: req.body.gender
+      password: req.body.password,
+      userEmail: req.body.userEmail
     }).then(function(results){
       res.json(results);
     });
@@ -31,8 +32,7 @@ module.exports = function(app) {
     db.Team.create({
       sportName: req.body.sportName,
       teamName: req.body.teamName,
-      openings: req.body.openings,
-      isOpen: req.body.isOpen
+      email: req.body.email,
     }).then(function(results) {
       res.json(results);
     });
