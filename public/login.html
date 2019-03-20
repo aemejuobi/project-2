@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TeamFinder</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="./js/index.js"></script>
-    </head>
-    <header>
-        <nav>
-          <h2>Sub Scrub</h2>
-        </nav>
-        <ul id="slide-out" class="sidenav">
-          <li>
-            <div class="user-view">
-              <div class="background">
-      
-              </div>
-              <a href="#user"><i class="material-icons">visibility</i></a>
-              <a href="#name"><span class="black-text name">Sub Scrub</span></a>
-            </div>
-          </li>
-          <li><a class="waves-effect" href="./index.html">Home</a></li>
-          <li><a class="waves-effect" href="./login.html">Player Login</a></li>
-          <li><a class="waves-effect" href="./team.html">Register Team</a></li>
-      
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      </header>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+</head>
 <body>
     <div class="loginPage">
         <div class="form">
-            <form class="registerForm">
+
+            <form class="registerForm" method="POST" action="/routes/apiRoutes.js">
                 <input id="userName" type="text" placeholder="What is your name?"/>
-                <input id="userPassword" type="text" placeholder="What is your password?"/>
-                <input id="userEmail" type="text" placeholder="What is your email?"/>+++++++++++++++
-                <button id="submitBtn" ><a href="player.html"></a> Submit</button>
+                <input id="userPassword" type="password" placeholder="What is your password?" required/>
+                <input id="userEmail" type="email" placeholder="What is your email?"/>
+                <button id="submitBtn"><a href="index.html"></a> Submit</button>
                 <p class="message">Already have an account?<a href="#" class="liginLink"> Click Me!</a></p>
             </form>
+
             <form class="loginForm">
                 <input type="text" placeholder="What is your name?"/>
-                <input type="text" placeholder="What is your password?"/>
+                <input type="password" placeholder="What is your password?" required/>
                 <button id="loginBtn" >Log in!</button>
-                <p class="message">Click here to <a href="#"> register!</a></p>
+                <p class="message">Click here to <a href="#">register!</a></p>
             </form>
+
         </div>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        
+        $("#submitBtn").on("click", function(event){
+            event.preventDefault();
+            
+            $.post("/api/newUser", {
+                name: $("#userName").val().trim(),
+                password: $("#userPassword").val().trim(),
+                userEmail: $("#userEmail").val().trim()
+            }).then(function(result){
+                console.log(result.data);
+            });
+        });
+
+
+
+        $(".message a").on("click", function() {
+            $("form").animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+        
+    </script>
 </body>
 </html>

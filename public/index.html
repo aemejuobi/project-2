@@ -1,68 +1,61 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TeamFinder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./js/index.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/index.js"></script>
 
-  <title>Sub Scrub</title>
+    <title>Sub Scrub</title>
 
-  
+    <style>
+      #player-table th,
+      td {
+        display: inline-block;
+        width: 16.575%;
+      }
+    </style>
+  </head>
 
-  <style>
-    #player-table th,
-    td {
-      display: inline-block;
-      width: 16.575%;
-    }
-  </style>
-</head>
-<header>
-  <nav>
-    <h2>Sub Scrub</h2>
-  </nav>
-  <ul id="slide-out" class="sidenav">
-    <li>
-      <div class="user-view">
-        <div class="background">
+  <body>
+    <header>
 
-        </div>
-        <a href="#user"><i class="material-icons">visibility</i></a>
-        <a href="#name"><span class="black-text name">Sub Scrub</span></a>
+      <nav>
+        <h2>Sub Scrub</h2>
+      </nav>
+
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <div class="user-view">
+            <div class="background"></div>
+            <a href="#user"><i class="material-icons">visibility</i></a>
+            <a href="#name"><span class="black-text name">Sub Scrub</span></a>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="./">Home</a></li>
+        <li><a class="waves-effect" href="/login">Player Login</a></li>
+        <li><a class="waves-effect" href="/team">Register Team</a></li>
+        <li><a class="waves-effect" href="/player">Get Recruited</a></li>
+      </ul>
+
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    </header>
+
+    <div class="container">
+      <div class="infoWindow">
+        <h3>Hi, welcome to Sub Scrub. Our application helps you find the perfect team or player and get you in the game.
+        </h3>
       </div>
-    </li>
-    <li><a class="waves-effect" href="./index.html">Home</a></li>
-    <li><a class="waves-effect" href="./login.html">Player Login</a></li>
-    <li><a class="waves-effect" href="./team.html">Register Team</a></li>
-
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-</header>
-
-
-<body>
-
-  <div class="container">
-    <div class="infoWindow">
-      <h3>Hi, welcome to TeamFinder. Our application helps you find the perfect team or player and get you in the game.
-      </h3>
     </div>
-  </div>
 
-
-
-
-
-
-</body>
-
+  </body>
 </html>
