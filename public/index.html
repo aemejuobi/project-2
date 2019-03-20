@@ -1,31 +1,22 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TeamFinder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../js/index.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TeamFinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./js/index.js"></script>
 
-  <meta charset="UTF-8">
-  <title>Team Finder</title>
+  <title>Sub Scrub</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-
-  <!-- Moment.js Reference -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  
 
   <style>
     #player-table th,
@@ -35,104 +26,43 @@
     }
   </style>
 </head>
+<header>
+  <nav>
+    <h2>Sub Scrub</h2>
+  </nav>
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+
+        </div>
+        <a href="#user"><i class="material-icons">visibility</i></a>
+        <a href="#name"><span class="black-text name">Sub Scrub</span></a>
+      </div>
+    </li>
+    <li><a class="waves-effect" href="./index.html">Home</a></li>
+    <li><a class="waves-effect" href="./login.html">Player Login</a></li>
+    <li><a class="waves-effect" href="./team.html">Register Team</a></li>
+
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</header>
+
+
 <body>
 
-    <header>
-        <nav><h2>Sub Scrub</h2></nav>
-            <ul id="slide-out" class="sidenav">
-              <li><div class="user-view">
-                <div class="background">
-                  
-                </div>
-                <a href="#user"><i class="material-icons">visibility</i></a>
-                <a href="#name"><span class="black-text name">Sub Scrub</span></a>
-              </div></li>
-              <li><a class="waves-effect" href="./index.html">Home</a></li>
-              <li><a class="waves-effect" href="./login.html">Player Login</a></li>
-              <li><a class="waves-effect" href="./team.html">Register Team</a></li>
-              
-            </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </header>
-    <div class="container">
-      <div class="infoWindow">
-        <h3>Hi, welcome to TeamFinder. Our application helps you find the perfect team or player and get you in the game. </h3>
-      </div>
-    </div>
-
-
-  <!-- Player Tracker -->
   <div class="container">
-
-    <!-- Jumbotron -->
-    <div class="jumbotron" style="background-color: black; color: white">
-      <h1 class="text-center">Find a Sport Team</h1>
-      <h3 class="text-center">Add yourself to the club of your choice</h3>
+    <div class="infoWindow">
+      <h3>Hi, welcome to TeamFinder. Our application helps you find the perfect team or player and get you in the game.
+      </h3>
     </div>
-
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <!-- Current Players-->
-        <div class="card mb-4">
-          <div class="card-header">Current Soccer Players</div>
-          <div class="card-body">
-            <table class="table table-sm table-hover" id='player-table'>
-              <thead>
-                <tr>
-                  <th scope="col">Player Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Age</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Add Player  -->
-        <div class="card mb-4">
-          <div class="card-header">Add new Player</div>
-          <div class="card-body">
-
-            <!-- Entry Form -->
-            <form>
-              <div class="form-group">
-                <label for="employee-name-input">Player Name</label>
-                <input class="form-control" id="player-name-input" placeholder="Lovren" type="text">
-              </div>
-              <div class="form-group">
-                <label for="Position-input">Position</label>
-                <input class="form-control" id="position-input" placeholder="midfielder" type="text">
-              </div>
-              <div class="form-group">
-                <label for="Gender-input">Gender</label>
-                <input class="form-control" id="gender-input" placeholder="M" type="text">
-              </div>
-              <div class="form-group">
-                <label for="jersey-input">Age</label>
-                <input class="form-control" id="age-input" placeholder="15" type="text">
-              </div>
-              <button class="btn btn-primary float-right" id="add-player-btn">Submit</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- JavaScript reference-->
-  <script src="team.js"></script>
+
+
+
 
 
 </body>
+
 </html>
