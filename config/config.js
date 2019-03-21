@@ -5,7 +5,6 @@ var password = process.env.DB_PASS;
 var database = process.env.DB_NAME;
 var host = process.env.DB_HOST;
 var use = "use_env_variable";
-var jaws = process.env.JAWS;
 
 module.exports = {
   development: {
@@ -16,11 +15,7 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    username: username,
-    password: password,
-    database: database,
-    host: host,
-    use: jaws,
+    use_env_variable: "JAWS_DB_URL",
     dialect: "mysql"
   }
 };
